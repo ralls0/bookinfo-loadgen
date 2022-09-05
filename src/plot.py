@@ -1,7 +1,3 @@
-import os
-import sys
-import re
-import json
 from datetime import *
 from tkinter.tix import Tree
 from tokenize import String
@@ -567,6 +563,7 @@ def plotP956(xpoints, xpointlabels, fP95, sP95, tP95, l1, l2, l3):
 
     # # plt.subplots_adjust(left=0.1, bottom=0.1, right=0.9, top=0.95, wspace=0.2, hspace=0.5)
     # # plt.tight_layout()
+    plt.ylim(0, 700.0)
     plt.show()
 
 
