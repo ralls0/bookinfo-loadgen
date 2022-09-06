@@ -35,7 +35,7 @@ spec:
           value: "productpage:9080"
       containers:
       - name: main
-        image: ralls0/bookinfoloadgen:v0.0.1
+        image: ralls0/bookinfoloadgen:v0.0.2
         env:
         - name: FRONTEND_ADDR
           value: "productpage:9080"
@@ -63,45 +63,3 @@ spec:
   - name: http
     port: 8089
     targetPort: 8089
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: locust-exporter
-spec:
-  selector:
-    matchLabels:
-      app: locust-exporter
-  template:
-    metadata:
-      labels:
-        app: locust-exporter
-    spec:
-      containers:
-      - name: exporter
-        image: containersol/locust_exporter
-        args:
-        - "--locust.uri"
-        - "http://loadgenerator.online-boutique.svc:8089"
-        resources:
-          requests:
-            cpu: 256m
-            memory: 256Mi
-          limits:
-            cpu: 1
-            memory: 512Mi
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: locust-exporter
-  labels:
-    app: locust-exporter
-spec:
-  type: ClusterIP
-  selector:
-    app: locust-exporter
-  ports:
-  - name: metrics
-    port: 9646
-    targetPort: 9646
