@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import random
-from locust import HttpUser, TaskSet, between
+from locust import HttpUser, TaskSet, constant_throughput, between
 
 
 def index(l):
