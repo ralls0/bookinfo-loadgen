@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import random
-from locust import HttpUser, TaskSet, constant_throughput, between
+from locust import HttpUser, TaskSet, constant, between
 
 
 def index(l):
@@ -19,4 +19,4 @@ class UserBehavior(TaskSet):
 class WebsiteUser(HttpUser):
     tasks = [UserBehavior]
     # wait_time = between(1, 10)
-    wait_time = constant_throughput(0.1)
+    wait_time = constant(0.1)
