@@ -18,4 +18,5 @@ class UserBehavior(TaskSet):
 
 class WebsiteUser(HttpUser):
     tasks = [UserBehavior]
-    wait_time = between(1, 10)
+    # wait_time = between(1, 10)
+    wait_time = constant_throughput(0.1)

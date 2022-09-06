@@ -152,8 +152,8 @@ user_count = [0,
               200]
 zt = [
     0,
-    2200.0,
-    2200.0,
+    78.0,
+    83.0,
     86,
     78,
     89,
@@ -220,9 +220,9 @@ zt = [
     200.0,
     410.0,
     410.0,
-    2000.0,
-    2800.0,
-    2700.0
+    420.0,
+    560.0,
+    550.0
 ]
 it = [
     0,
@@ -374,9 +374,9 @@ ipt = [
 ]
 kt = [
     0,
-    1300.0,
-    2100.0,
-    1100.0,
+    100.0,
+    130.0,
+    200.0,
     200.0,
     100.0,
     120.0,
@@ -439,11 +439,11 @@ kt = [
     210.0,
     330.0,
     330.0,
+    510.0,
+    860.0,
+    890.0,
     1200.0,
-    1900.0,
-    3700.0,
-    3600.0,
-    2200.0,
+    1200.0,
     760.0
 ]
 kpt = [0,
@@ -532,14 +532,11 @@ def plotUsers(xpoints, xpointlabels, nusers):
     plot2.grid()
     plot2.legend(loc='upper left')
 
-    # plt.subplots_adjust(left=0.1, bottom=0.1, right=0.9, top=0.95, wspace=0.2, hspace=0.5)
-    # plt.tight_layout()
     plt.show()
 
 
 def plotP956(xpoints, xpointlabels, fP95, sP95, tP95, l1, l2, l3):
     plot1 = plt.subplot2grid((1, 1), (0, 0))
-    # plot2 = plt.subplot2grid((2, 1), (1, 0))
 
     plot1.set_title("Response Time (ms)")
     plot1.set_xlabel("Time")
@@ -552,18 +549,7 @@ def plotP956(xpoints, xpointlabels, fP95, sP95, tP95, l1, l2, l3):
     plot1.grid()
     plot1.legend(loc='upper left')
 
-    # plot2.set_title("Number of Users")
-    # plot2.set_xlabel("Time")
-    # plot2.set_ylabel("Users")
-    # plot2.plot(xpoints, nusers, label="users")
-    # plot2.set_xticks(xpointlabels)
-    # plot2.set_xticklabels(xpointlabels, rotation=45, fontsize="small")
-    # plot2.grid()
-    # plot2.legend(loc='upper left')
-
-    # # plt.subplots_adjust(left=0.1, bottom=0.1, right=0.9, top=0.95, wspace=0.2, hspace=0.5)
-    # # plt.tight_layout()
-    plt.ylim(0, 700.0)
+    # plt.ylim(0, 700.0)
     plt.show()
 
 
